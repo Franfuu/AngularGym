@@ -4,8 +4,14 @@ import { routes } from './app.routes';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { getAuth, provideAuth } from '@angular/fire/auth';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes), provideFirebaseApp(() => initializeApp(environment.firestore)), provideFirestore(() => getFirestore())]
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+    provideFirebaseApp(() => initializeApp(environment.firestore)),
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth())
+  ],
 };
