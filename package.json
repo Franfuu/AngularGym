@@ -2,6 +2,7 @@
   "name": "angular-gym",
   "version": "0.0.0",
   "scripts": {
+    "firebase:deploy": "ng b --c=production && firebase deploy --only hosting",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -14,6 +15,7 @@
     "@angular/common": "^19.0.0",
     "@angular/compiler": "^19.0.0",
     "@angular/core": "^19.0.0",
+    "@angular/fire": "^19.0.0-rc.4",
     "@angular/forms": "^19.0.0",
     "@angular/platform-browser": "^19.0.0",
     "@angular/platform-browser-dynamic": "^19.0.0",
