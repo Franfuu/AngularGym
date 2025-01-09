@@ -1,4 +1,92 @@
-<section class="container mt-5">
-  <h1>Hola Mundo</h1>
-  <p>Este es el mensaje "Hola Mundo".</p>
+<section class="container mt-5 text-center">
+
+  <section>
+  <h1>Galeria de nuestras instalaciones</h1>
+  </section>
+
+  <br>
+  <br>
+  <!-- Sección de Salas -->
+  <div class="section">
+    <h2>Salas</h2>
+    <div class="gallery-container">
+      <button class="nav-btn prev-btn" (click)="scrollGallery(-1, 'salas')">&#10094;</button>
+      <div class="gallery salas">
+        <div class="gallery-item">
+          <img src="Sala1.jpg" alt="Imagen 1">
+        </div>
+        <div class="gallery-item">
+          <img src="Sala2.jpg" alt="Imagen 2">
+        </div>
+        <div class="gallery-item">
+          <img src="Sala3.jpg" alt="Imagen 3">
+        </div>
+        <div class="gallery-item">
+          <img src="Sala4.jpg" alt="Imagen 4">
+        </div>
+        <div class="gallery-item">
+          <img src="Sala5.jpg" alt="Imagen 5">
+        </div>
+      </div>
+      <button class="nav-btn next-btn" (click)="scrollGallery(1, 'salas')">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- Sección del Ático -->
+  <div class="section">
+    <h2>Ático</h2>
+    <div class="gallery-container">
+      <button class="nav-btn prev-btn" (click)="scrollGallery(-1, 'atico')">&#10094;</button>
+      <div class="gallery atico">
+        <div class="gallery-item">
+          <img src="Atico.jpg" alt="Atico 1">
+        </div>
+        <div class="gallery-item">
+          <img src="Atico2.jpg" alt="Atico 2">
+        </div>
+        <div class="gallery-item">
+          <img src="Atico3.jpg" alt="Atico 2">
+        </div>
+        <div class="gallery-item">
+          <img src="Atico4.jpg" alt="Atico 2">
+        </div>
+        <div class="gallery-item">
+          <img src="Atico5.jpg" alt="Atico 2">
+        </div>
+      </div>
+      <button class="nav-btn next-btn" (click)="scrollGallery(1, 'atico')">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- Sección de Box CrossTraining -->
+  <div class="section">
+    <h2>Box CrossTraining</h2>
+    <div class="gallery-container">
+      <button class="nav-btn prev-btn" (click)="scrollGallery(-1, 'box')">&#10094;</button>
+      <div class="gallery box">
+        <div class="gallery-item">
+          <img src="BoxCrosstraining.jpg" alt="Box CrossTraining 1">
+        </div>
+        <div class="gallery-item">
+          <img src="BoxCrosstraining2.jpg" alt="Box CrossTraining 2">
+        </div>
+        <div class="gallery-item">
+          <img src="BoxCrosstraining3.jpg" alt="Box CrossTraining 3">
+        </div>
+        <div class="gallery-item">
+          <img src="BoxCrosstraining4.jpg" alt="Box CrossTraining 4">
+      </div>
+      <div class="gallery-item">
+        <img src="BoxCrosstraining5.jpg" alt="Box CrossTraining 5">
+      </div>
+        <div class="gallery-item">
+          <img src="BoxCrosstraining6.jpg" alt="Box CrossTraining 5">
+        </div>
+        <div class="gallery-item">
+          <img src="BoxCrosstraining7.jpg" alt="Box CrossTraining 5">
+        </div>
+      </div>
+      <button class="nav-btn next-btn" (click)="scrollGallery(1, 'box')">&#10095;</button>
+    </div>
+  </div>
 </section>
