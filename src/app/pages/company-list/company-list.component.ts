@@ -1,8 +1,10 @@
+// company-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CompanyService } from '../../services/company.service';
 import { Company } from '../../models/company';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-company-list',
@@ -12,17 +14,15 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./company-list.component.css']
 })
 export class CompanyListComponent implements OnInit {
-  companies: Company[] = [];
+  companies!: Observable<Company[]>;
 
   constructor(private companyService: CompanyService) {}
 
   ngOnInit(): void {
-    this.companyService.getCompanies().subscribe((companies) => {
-      this.companies = companies;
-    });
+    this.companies = this.companyService.getCompanies();
   }
 
-  deleteCompany(id: string): void {
+  deleteCompany(id: string | undefined): void {
     this.companyService.deleteCompany(id);
   }
 }
