@@ -12,7 +12,7 @@ export class CompanyService {
 
 
   constructor(private firestore: Firestore) {
-    this.companyCollection = collection(this.firestore, 'companies');
+    this.companyCollection = collection(this.firestore, 'clients');
   }
 
   // Obtener todas las companys
@@ -22,24 +22,32 @@ export class CompanyService {
 
   // Obtener una company por ID
   getCompany(id: string): Observable<Company | undefined> {
-    const companyDocRef = doc(this.firestore, `companies/${id}`);
+    const companyDocRef = doc(this.firestore, `clients/${id}`);
     return docData(companyDocRef) as Observable<Company | undefined>;
   }
 
   // Agregar una nueva company
-  addCompany(company: Company): Promise<void> {
+  addCompany(company: {
+    tipo_membresia: string;
+    altura: number;
+    peso: number;
+    apellido: string;
+    genero: string;
+    telefono: string;
+    nombre: string
+  }): Promise<void> {
     return addDoc(this.companyCollection, company) as unknown as Promise<void>;
   }
 
   // Actualizar una company existente
   updateCompany(id: string, company: Partial<Company>): Promise<void> {
-    const companyDocRef = doc(this.firestore, `companies/${id}`);
+    const companyDocRef = doc(this.firestore, `clients/${id}`);
     return updateDoc(companyDocRef, company) as Promise<void>;
   }
 
   // Eliminar una company
-  deleteCompany(id: string): Promise<void> {
-    const companyDocRef = doc(this.firestore, `companies/${id}`);
+  deleteCompany(id: string | undefined): Promise<void> {
+    const companyDocRef = doc(this.firestore, `clients/${id}`);
     return deleteDoc(companyDocRef) as Promise<void>;
   }
 }

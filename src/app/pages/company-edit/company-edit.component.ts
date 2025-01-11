@@ -1,3 +1,4 @@
+// company-edit.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CompanyService } from '../../services/company.service';
 import { Company } from '../../models/company';
@@ -14,7 +15,7 @@ import { NotificationComponent } from "../../components/notification/notificatio
   styleUrl: './company-edit.component.css'
 })
 export class CompanyEditComponent {
-  company: Company = { name: '', address: '', phone: '', email: ''};
+  company: Company = {id: '', nombre: '', apellido: '', genero: '', altura: 0, peso: 0, telefono: '', tipo_membresia: '' };
   id: string = '';
   showAlert: boolean = false;
   alertMessage: string = "";
@@ -27,7 +28,7 @@ export class CompanyEditComponent {
       console.log(this.id);
       this.companyService.getCompany(this.id).subscribe({
         error: (error) => {
-          this.alertMessage = `Error al cargar la empresa: ${error}`;
+          this.alertMessage = `Error al cargar el cliente: ${error}`;
           this.alertClass = "danger";
           this.showAlert = true;
         },
@@ -35,7 +36,7 @@ export class CompanyEditComponent {
           if (company) {
             this.company = company;
           } else {
-            this.alertMessage = `La empresa con id ${this.id} no existe`;
+            this.alertMessage = `El cliente con id ${this.id} no existe`;
             this.alertClass = "danger";
             this.showAlert = true;
           }
@@ -47,11 +48,11 @@ export class CompanyEditComponent {
   updateCompany() {
     if (this.id) {
       this.companyService.updateCompany(this.id, this.company).then(() => {
-        this.alertMessage = `Empresa editada correctamente`;
+        this.alertMessage = `Cliente editado correctamente`;
         this.alertClass = "success";
         this.showAlert = true;
       }).catch((error) => {
-        this.alertMessage = `Error al editar la empresa: ${error}`;
+        this.alertMessage = `Error al editar el cliente: ${error}`;
         this.alertClass = "danger";
         this.showAlert = true;
       });

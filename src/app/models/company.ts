@@ -1,7 +1,10 @@
 export interface Company {
-  id?: string; // Used as Firestore ID
-  name: string;
-  address: string;
-  phone: string;
-  email: string;
+  id: string;
+  nombre: string;
+  apellido: string;
+  genero: string;
+  altura: number;
+  peso: number;
+  telefono: string;
+  tipo_membresia: string;
 }

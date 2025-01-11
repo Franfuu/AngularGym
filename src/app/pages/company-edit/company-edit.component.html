@@ -3,43 +3,73 @@
   <app-notification *ngIf="showAlert" [alertClass]="alertClass" [alertMessage]="alertMessage"/>
   <form (submit)="updateCompany()">
     <div class="form-group mb-4">
-      <label for="name">Nombre</label>
+      <label for="nombre">Nombre</label>
       <input
         class="form-control"
-        id="name"
-        name="name"
+        id="nombre"
+        name="nombre"
         type="text"
-        [(ngModel)]="company.name"
+        [(ngModel)]="company.nombre"
       />
     </div>
     <div class="form-group mb-4">
-      <label for="address">Dirección</label>
+      <label for="apellido">Apellido</label>
       <input
         class="form-control"
-        id="address"
-        name="address"
+        id="apellido"
+        name="apellido"
         type="text"
-        [(ngModel)]="company.address"
+        [(ngModel)]="company.apellido"
       />
     </div>
     <div class="form-group mb-4">
-      <label for="phone">Teléfono</label>
+      <label for="telefono">Teléfono</label>
       <input
         class="form-control"
-        id="phone"
-        name="phone"
+        id="telefono"
+        name="telefono"
         type="text"
-        [(ngModel)]="company.phone"
+        [(ngModel)]="company.telefono"
       />
     </div>
     <div class="form-group mb-4">
-      <label for="email">Email</label>
+      <label for="genero">Genero</label>
       <input
         class="form-control"
-        id="email"
-        name="email"
-        type="email"
-        [(ngModel)]="company.email"
+        id="genero"
+        name="genero"
+        type="text"
+        [(ngModel)]="company.genero"
+      />
+    </div>
+    <div class="form-group mb-4">
+      <label for="altura">Altura</label>
+      <input
+        class="form-control"
+        id="altura"
+        name="altura"
+        type="text"
+        [(ngModel)]="company.altura"
+      />
+    </div>
+    <div class="form-group mb-4">
+      <label for="peso">Peso</label>
+      <input
+        class="form-control"
+        id="peso"
+        name="peso"
+        type="text"
+        [(ngModel)]="company.peso"
+      />
+    </div>
+    <div class="form-group mb-4">
+      <label for="tipo_membresia">Tipo de membresia</label>
+      <input
+        class="form-control"
+        id="tipo_membresia"
+        name="tipo_membresia"
+        type="text"
+        [(ngModel)]="company.tipo_membresia"
       />
     </div>
     <div class="d-grid gap-2 d-md-block">
