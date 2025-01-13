@@ -6,6 +6,7 @@ import { ClientAddComponent } from './pages/client-add/client-add.component';
 import { ClientEditComponent } from './pages/client-edit/client-edit.component';
 import { LoginGoogleComponent } from './components/login-google/login-google.component';
 import { ContactInfoComponent } from './pages/contact-info/contact-info.component';
+import {ApiComponent} from './pages/api/api.component';
 import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
@@ -15,5 +16,6 @@ export const routes: Routes = [
   { path: 'clientes/añadir', component: ClientAddComponent, canActivate: [AuthGuard] },
   { path: 'clientes/editar/:id', component: ClientEditComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginGoogleComponent },
-  { path: 'contacto', component: ContactInfoComponent }
+  { path: 'contacto', component: ContactInfoComponent },
+  { path: 'api', component: ApiComponent }
 ];
