@@ -1,7 +1,7 @@
-// company-edit.component.ts
+// client-edit.component.ts
 import { Component, OnInit } from '@angular/core';
-import { CompanyService } from '../../services/company.service';
-import { Company } from '../../models/company';
+import { ClientsService } from '../../services/clients.service';
+import { Clients } from '../../models/clients';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -11,17 +11,17 @@ import { NotificationComponent } from "../../components/notification/notificatio
   selector: 'app-company-edit',
   standalone: true,
   imports: [CommonModule, FormsModule, NotificationComponent],
-  templateUrl: './company-edit.component.html',
-  styleUrl: './company-edit.component.css'
+  templateUrl: './client-edit.component.html',
+  styleUrl: './client-edit.component.css'
 })
-export class CompanyEditComponent {
-  company: Company = {id: '', nombre: '', apellido: '', genero: '', altura: 0, peso: 0, telefono: '', tipo_membresia: '' };
+export class ClientEditComponent {
+  company: Clients = {id: '', nombre: '', apellido: '', genero: '', altura: 0, peso: 0, telefono: '', tipo_membresia: '' };
   id: string = '';
   showAlert: boolean = false;
   alertMessage: string = "";
   alertClass: string = "";
 
-  constructor(private companyService: CompanyService, private route: ActivatedRoute) {
+  constructor(private companyService: ClientsService, private route: ActivatedRoute) {
     this.id = this.route.snapshot.params['id'];
     if (this.id) {
       // Obtener los detalles de la empresa desde Firestore

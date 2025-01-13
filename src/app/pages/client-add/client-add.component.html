@@ -1,5 +1,5 @@
 <section class="container mt-4">
-  <h2 class="">Añadir empresa</h2>
+  <h2 class="">Añadir cliente</h2>
   <app-notification *ngIf="showAlert" [alertClass]="alertClass" [alertMessage]="alertMessage"/>
   <form [formGroup]="companyForm" (submit)="submitCompany()">
     <div class="form-group mb-4">
@@ -66,7 +66,7 @@
       />
     </div>
     <div class="d-grid gap-2 d-md-block">
-      <button type="submit" class="btn btn-primary mt-3 "><i class="bi bi-plus-lg"></i> Añadir</button>
+      <button type="submit" class="btn mt-3" style="background-color: #3cff75; color: #000000;"><i class="bi bi-plus-lg"></i> Añadir</button>
     </div>
   </form>
 </section>

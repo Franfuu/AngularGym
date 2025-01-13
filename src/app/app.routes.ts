@@ -1,17 +1,19 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { HelloWorldComponent } from './pages/hello-world/hello-world.component';
-import { CompanyListComponent } from './pages/company-list/company-list.component';
-import { CompanyAddComponent } from './pages/company-add/company-add.component';
-import { CompanyEditComponent } from './pages/company-edit/company-edit.component';
+import { GaleriaComponent } from './pages/galeria/galeria.component';
+import { ClientListComponent } from './pages/client-list/client-list.component';
+import { ClientAddComponent } from './pages/client-add/client-add.component';
+import { ClientEditComponent } from './pages/client-edit/client-edit.component';
 import { LoginGoogleComponent } from './components/login-google/login-google.component';
+import { ContactInfoComponent } from './pages/contact-info/contact-info.component';
 import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'hola-mundo', component: HelloWorldComponent },
-  { path: 'empresas', component: CompanyListComponent, canActivate: [AuthGuard]  },
-  { path: 'empresas/anadir', component: CompanyAddComponent, canActivate: [AuthGuard] },
-  { path: 'empresas/editar/:id', component: CompanyEditComponent, canActivate: [AuthGuard] },
-  { path: 'login', component: LoginGoogleComponent }
+  { path: 'galeria', component: GaleriaComponent },
+  { path: 'clientes', component: ClientListComponent, canActivate: [AuthGuard]  },
+  { path: 'clientes/añadir', component: ClientAddComponent, canActivate: [AuthGuard] },
+  { path: 'clientes/editar/:id', component: ClientEditComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginGoogleComponent },
+  { path: 'contacto', component: ContactInfoComponent }
 ];
