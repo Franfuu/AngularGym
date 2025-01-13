@@ -4,10 +4,10 @@ import { Component } from '@angular/core';
   selector: 'app-hello-world',
   standalone: true,
   imports: [],
-  templateUrl: './hello-world.component.html',
-  styleUrls: ['./hello-world.component.css']
+  templateUrl: './galeria.component.html',
+  styleUrls: ['./galeria.component.css']
 })
-export class HelloWorldComponent {
+export class GaleriaComponent {
   scrollGallery(direction: number, section: string): void {
     const gallery = document.querySelector(`.gallery.${section}`) as HTMLElement;
     const scrollAmount = gallery.clientWidth;

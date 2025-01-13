@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { CompanyService } from '../../services/company.service';
-import { Company } from '../../models/company';
+import { ClientsService } from '../../services/clients.service';
+import { Clients } from '../../models/clients';
 import { NotificationComponent } from '../../components/notification/notification.component';
 
 @Component({
   selector: 'app-company-add',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, NotificationComponent],
-  templateUrl: './company-add.component.html',
-  styleUrl: './company-add.component.css',
+  templateUrl: './client-add.component.html',
+  styleUrl: './client-add.component.css',
 })
-export class CompanyAddComponent {
+export class ClientAddComponent {
   showAlert: boolean = false;
   alertMessage: string = "";
   alertClass: string = "";
@@ -25,7 +25,7 @@ export class CompanyAddComponent {
     telefono: new FormControl(''),
     tipo_membresia: new FormControl(''),
   });
-  constructor(private companyService: CompanyService) {}
+  constructor(private companyService: ClientsService) {}
 
   submitCompany() {
     let newCompany: {

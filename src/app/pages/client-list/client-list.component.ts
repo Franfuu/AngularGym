@@ -1,7 +1,7 @@
-// company-list.component.ts
+// client-list.component.ts
 import { Component, OnInit } from '@angular/core';
-import { CompanyService } from '../../services/company.service';
-import { Company } from '../../models/company';
+import { ClientsService } from '../../services/clients.service';
+import { Clients } from '../../models/clients';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -10,13 +10,13 @@ import { Observable } from 'rxjs';
   selector: 'app-company-list',
   standalone: true,
   imports: [CommonModule, RouterLink],
-  templateUrl: './company-list.component.html',
-  styleUrls: ['./company-list.component.css']
+  templateUrl: './client-list.component.html',
+  styleUrls: ['./client-list.component.css']
 })
-export class CompanyListComponent implements OnInit {
-  companies!: Observable<Company[]>;
+export class ClientListComponent implements OnInit {
+  companies!: Observable<Clients[]>;
 
-  constructor(private companyService: CompanyService) {}
+  constructor(private companyService: ClientsService) {}
 
   ngOnInit(): void {
     this.companies = this.companyService.getCompanies();
