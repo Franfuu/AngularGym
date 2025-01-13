@@ -8,6 +8,7 @@
       <th scope="col">Apellido</th>
       <th scope="col">Género</th>
       <th scope="col">Teléfono</th>
+      <th scope="col">Tipo Membresía</th>
       <th scope="col">Acciones</th>
     </tr>
     </thead>
@@ -17,6 +18,7 @@
       <td>{{ company.apellido }}</td>
       <td>{{ company.genero }}</td>
       <td>{{ company.telefono }}</td>
+      <td>{{ company.tipo_membresia }}</td>
       <td>
         <div class="d-flex flex-row gap-2 align-items-center">
           <a [routerLink]="['/clientes/editar', company.id]" class="btn btn-secondary btn-sm">
