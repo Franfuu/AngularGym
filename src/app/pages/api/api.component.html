@@ -5,6 +5,18 @@
   <title>Title</title>
 </head>
 <body>
-
+<div class="container mt-4">
+  <h2>Información Alimentos</h2>
+  <h3>Por cada 100g:</h3>
+  <div *ngIf="nutritionData && nutritionData.length > 0; else loading">
+    <div *ngFor="let item of nutritionData">
+      <h4>"{{ item.name }}"</h4>
+      <p>Grasa: {{ item.fat_total_g }} g, Carbohidratos: {{ item.carbohydrates_total_g }} g, Fibra: {{ item.fiber_g }} g, Azúcar: {{ item.sugar_g }} g y Colesterol: {{ item.cholesterol_g }} g</p>
+    </div>
+  </div>
+  <ng-template #loading>
+    <p>Cargando información nutricional...</p>
+  </ng-template>
+</div>
 </body>
 </html>
